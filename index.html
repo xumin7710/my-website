@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>与鲁迅跨越时空的对话 - 作者：陈思羽</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>兴物城建集团有限公司｜官网V1.0启动版</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="brand">兴物城建集团有限公司</div>
+    <nav>
+      <a href="#about">关于我们</a>
+      <a href="#business">业务板块</a>
+      <a href="#projects">项目案例</a>
+      <a href="#news">新闻中心</a>
+      <a href="#contact">联系我们</a>
+    </nav>
+  </header>
 
-<div id="particles-container"></div>
-
-<div class="mobile-header">
-    <div class="author-seal mobile-seal">陈思羽</div>
-    <span>跨越时空的对话</span>
-</div>
-
-<div class="sidebar">
-    <div class="author-seal-container desktop-only">
-        <div class="author-seal">陈思羽</div>
+  <section class="hero">
+    <div>
+      <p class="tag">国匠蓝 × 城市引擎（1+2混合）</p>
+      <h1>建设城市未来，交付民生价值</h1>
+      <p>本页面为官网重建V1.0启动版。后续将依据公开来源与企业核验口径持续更新。</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">商务合作</a>
+        <button class="btn" id="openAdmin">管理员维护</button>
+      </div>
     </div>
-    <div class="section-title">经典书架</div>
-    <div class="scroll-area">
-        <span class="interactive-tag ink-trigger" onclick="askAboutWork('狂人日记')">《狂人日记》</span>
-        <span class="interactive-tag ink-trigger" onclick="askAboutWork('阿Q正传')">《阿Q正传》</span>
-        <span class="interactive-tag ink-trigger" onclick="askAboutWork('故乡')">《故乡》</span>
-    </div>
-    <div class="section-title">先生寄语</div>
-    <div class="scroll-area" id="quotesContainer"></div>
-</div>
+    <div class="stats" id="statsGrid"></div>
+  </section>
 
-<div class="main-content">
-    <div class="book-container">
-        <div class="book-header desktop-only">
-            <img class="portrait" src="luxun.jpg" alt="鲁迅">
-            <div class="title-area">
-                <h1>跨越时空的对话</h1>
-                <p>「愿中国青年都摆脱冷气，只是向上走」</p>
-            </div>
-        </div>
-        <div class="chat-box" id="chatBox">
-            <div class="message luxun" id="first-msg"></div>
-        </div>
-        <div class="input-area">
-            <textarea id="userInput" placeholder="写下想对先生说的话..."></textarea>
-            <button id="sendBtn" class="ink-trigger">呈递</button>
-        </div>
-    </div>
-</div>
+  <main>
+    <section id="about" class="card">
+      <h2>关于我们</h2>
+      <p id="aboutText"></p>
+    </section>
 
-<div class="tools-panel">
-    <div class="section-title">先生书斋</div>
-    <div class="tool-grid">
-        <button class="tool-btn ink-trigger" onclick="useTool('essay')">✍️ 评判时事<br><small>代写犀利杂文</small></button>
-        <button class="tool-btn ink-trigger" onclick="useTool('lyrics')">🎵 唤醒青年<br><small>创作现代歌词</small></button>
-        <button class="tool-btn ink-trigger" onclick="useTool('story')">🏮 往事如烟<br><small>倾听生平轶事</small></button>
-    </div>
-</div>
+    <section id="business" class="card">
+      <h2>业务板块</h2>
+      <ul id="businessList" class="grid-list"></ul>
+    </section>
 
-<script src="script.js"></script>
+    <section id="projects" class="card">
+      <h2>重点项目</h2>
+      <div id="projectList" class="grid-cards"></div>
+    </section>
+
+    <section id="news" class="card">
+      <h2>新闻中心</h2>
+      <ul id="newsList" class="news-list"></ul>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>联系我们</h2>
+      <p id="contactText"></p>
+    </section>
+  </main>
+
+  <div id="adminModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3>管理员后台（演示版）</h3>
+        <button id="closeAdmin" class="icon-btn">✕</button>
+      </div>
+      <p class="hint">无需代码：直接编辑字段并保存，页面实时更新到本地存储。</p>
+      <textarea id="adminJson" rows="16"></textarea>
+      <div class="hero-actions">
+        <button class="btn primary" id="saveAdmin">保存并刷新</button>
+        <button class="btn" id="resetAdmin">恢复默认数据</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>© <span id="year"></span> 兴物城建集团有限公司｜官网V1.0启动版</footer>
+  <script src="script.js"></script>
 </body>
 </html>
